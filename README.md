@@ -1,4 +1,32 @@
-# React + TypeScript + Vite
+# 📞 Challenge UAO 01 - App de Contactos PWA
+
+Aplicación web progresiva (PWA) para gestión de contactos, desarrollada con React + TypeScript + Vite.
+
+## 🌐 Enlace en vivo
+
+**[https://tiny-moonbeam-275b37.netlify.app/](https://tiny-moonbeam-275b37.netlify.app/)**
+
+## 📲 Cómo instalar la aplicación en el celular
+
+Esta app es una **PWA (Progressive Web App)** y puede instalarse en la pantalla de inicio de tu móvil para usarla como una app nativa.
+
+### En Android (Chrome)
+1. Abre el enlace de Netlify en Chrome: [https://tiny-moonbeam-275b37.netlify.app/](https://tiny-moonbeam-275b37.netlify.app/)
+2. Toca el menú de tres puntos (⋮) en la esquina superior derecha
+3. Selecciona **"Instalar app"** o **"Agregar a la pantalla de inicio"**
+4. Confirma con **"Instalar"**
+5. Verás el ícono de la app en tu pantalla de inicio
+
+### En iPhone/iPad (Safari)
+1. Abre el enlace en Safari: [https://tiny-moonbeam-275b37.netlify.app/](https://tiny-moonbeam-275b37.netlify.app/)
+2. Toca el botón **Compartir** (cuadrado con flecha hacia arriba)
+3. Desplázate y selecciona **"Agregar a pantalla de inicio"**
+4. Personaliza el nombre si lo deseas y toca **"Agregar"**
+5. El ícono aparecerá en tu pantalla de inicio
+
+---
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
