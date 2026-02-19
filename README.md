@@ -4,14 +4,14 @@ Aplicación web progresiva (PWA) para gestión de contactos, desarrollada con Re
 
 ## 🌐 Enlace en vivo
 
-**[https://tiny-moonbeam-275b37.netlify.app/](https://tiny-moonbeam-275b37.netlify.app/)**
+**[https://tiny-moonbeam-275b37.netlify.app/](https://curious-gingersnap-b13b6b.netlify.app/)**
 
 ## 📲 Cómo instalar la aplicación en el celular
 
 Esta app es una **PWA (Progressive Web App)** y puede instalarse en la pantalla de inicio de tu móvil para usarla como una app nativa.
 
 ### En Android (Chrome)
-1. Abre el enlace de Netlify en Chrome: [https://tiny-moonbeam-275b37.netlify.app/](https://tiny-moonbeam-275b37.netlify.app/)
+1. Abre el enlace de Netlify en Chrome: [https://tiny-moonbeam-275b37.netlify.app/]([https://tiny-moonbeam-275b37.netlify.app/](https://curious-gingersnap-b13b6b.netlify.app/))
 2. Toca el menú de tres puntos (⋮) en la esquina superior derecha
 3. Selecciona **"Instalar app"** o **"Agregar a la pantalla de inicio"**
 4. Confirma con **"Instalar"**
