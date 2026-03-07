@@ -1,0 +1,55 @@
+.list-page {
+  max-width: 800px;
+}
+
+.list-page h1 {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+}
+
+.logout-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(220, 53, 69, 0.2);
+  border-color: rgba(220, 53, 69, 0.5);
+}
+
+.logout-btn:hover {
+  background: rgba(220, 53, 69, 0.35);
+  border-color: #dc3545;
+}
+
+.protected-layout {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.protected-layout__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.protected-layout__nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.protected-layout__nav a {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.2s;
+}
+
+.protected-layout__nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.protected-layout__main {
+  min-height: 50vh;
+}
