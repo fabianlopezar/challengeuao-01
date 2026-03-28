@@ -1,30 +1,53 @@
-import { Link } from "react-router-dom";
-import Loader from "../components/loader/Loader";
+import {
+  IonItem,
+  IonLabel,
+  IonIcon,
+  IonText,
+} from "@ionic/react";
+import { wifiOutline, cellularOutline, cloudOfflineOutline } from "ionicons/icons";
 import ContactsApp from "../components/contact/ContactsApp";
+import { useNetworkStatus } from "../context/NetworkContext";
 
-interface HomePageProps {
-  loading: boolean;
-}
+const HomePage = () => {
+  const { isOnline, connectionType } = useNetworkStatus();
 
-const HomePage = ({ loading }: HomePageProps) => {
-  if (loading) return <Loader text="Cargando aplicación..." />;
+  const getIcon = () => {
+    if (!isOnline) return cloudOfflineOutline;
+    if (connectionType === "wifi") return wifiOutline;
+    return cellularOutline;
+  };
 
   return (
-    <div>
-      <header className="app-header">
+    <>
+      <div className="app-header">
         <img
           src="/header-contacts.png"
-          alt="Contactos - Gestión de contactos"
+          alt="Contactos"
           className="header-image"
         />
-      </header>
-      <nav className="app-nav">
-        <Link to="/task-manager" className="app-nav__link">
-          Ir al Gestor de Tareas →
-        </Link>
-      </nav>
-      <ContactsApp />
-    </div>
+      </div>
+
+      <div className="ion-padding">
+        <IonItem lines="full">
+          <IonIcon icon={getIcon()} slot="start" />
+          <IonLabel>
+            <IonText color={isOnline ? "success" : "danger"}>
+              <h2>{isOnline ? "Conectado" : "Sin conexión"}</h2>
+            </IonText>
+            <p>Tipo: {connectionType ?? "desconocido"}</p>
+            {!isOnline && (
+              <p>
+                <IonText color="warning">
+                  Las acciones de Contactos y Tareas requieren red.
+                </IonText>
+              </p>
+            )}
+          </IonLabel>
+        </IonItem>
+
+        <ContactsApp networkOnline={isOnline} />
+      </div>
+    </>
   );
 };
 

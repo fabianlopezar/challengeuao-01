@@ -1,13 +1,13 @@
 import type { Contact } from "./ContactsApp";
 
-
 interface Props {
   contacts: Contact[];
-  onDelete: (id: number) => void;
+  onDelete: (id: string) => void | Promise<void>;
+  actionsDisabled?: boolean;
 }
 
-const ContactList = ({ contacts, onDelete }: Props) => {
-  if (contacts.length === 0) return <p>📭 No hay contactos</p>;
+const ContactList = ({ contacts, onDelete, actionsDisabled = false }: Props) => {
+  if (contacts.length === 0) return <p>No hay contactos</p>;
 
   return (
     <ul>
@@ -16,7 +16,13 @@ const ContactList = ({ contacts, onDelete }: Props) => {
           <span>
             {c.name} - {c.phone}
           </span>
-          <button onClick={() => onDelete(c.id)}>❌</button>
+          <button
+            type="button"
+            onClick={() => void onDelete(c.id)}
+            disabled={actionsDisabled}
+          >
+            Eliminar
+          </button>
         </li>
       ))}
     </ul>

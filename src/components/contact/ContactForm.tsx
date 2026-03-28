@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 interface Props {
-  onAddContact: (name: string, phone: string) => void;
+  onAddContact: (name: string, phone: string) => void | Promise<void>;
+  disabled?: boolean;
 }
 
-const ContactForm = ({ onAddContact }: Props) => {
+const ContactForm = ({ onAddContact, disabled = false }: Props) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
@@ -12,12 +13,17 @@ const ContactForm = ({ onAddContact }: Props) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!name.trim() || !phone.trim()) {
-      setError("❌ Todos los campos son obligatorios");
+    if (disabled) {
+      setError("Sin conexión: no puedes agregar contactos.");
       return;
     }
 
-    onAddContact(name, phone);
+    if (!name.trim() || !phone.trim()) {
+      setError("Todos los campos son obligatorios");
+      return;
+    }
+
+    void onAddContact(name, phone);
     setName("");
     setPhone("");
     setError("");
@@ -30,6 +36,7 @@ const ContactForm = ({ onAddContact }: Props) => {
         placeholder="Nombre"
         value={name}
         onChange={(e) => setName(e.target.value)}
+        disabled={disabled}
       />
 
       <input
@@ -37,11 +44,17 @@ const ContactForm = ({ onAddContact }: Props) => {
         placeholder="Teléfono"
         value={phone}
         onChange={(e) => setPhone(e.target.value)}
+        disabled={disabled}
       />
 
-      <button type="submit">Agregar</button>
+      <button type="submit" disabled={disabled}>
+        Agregar
+      </button>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
+      {disabled && (
+        <p style={{ opacity: 0.8 }}>Activa conexión para gestionar contactos.</p>
+      )}
     </form>
   );
 };
